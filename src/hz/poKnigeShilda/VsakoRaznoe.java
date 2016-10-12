@@ -79,7 +79,26 @@ public class VsakoRaznoe {
 
     }
 
+    String slovo = "Привет";
 
-    // Метод read для чтения данных с консоли
+        public void rabotaSoSwichem () {
+            System.out.println("Работа со Свичем ");
 
-}
+          //  String slovo = "Привет";
+
+            switch (slovo) {
+
+                case "Привет":
+                    System.out.println("Свитчь");
+                    break;
+
+                        default:
+                            System.out.println("Данных нет");
+
+            }
+        }
+
+
+
+
+        } // коннец класса

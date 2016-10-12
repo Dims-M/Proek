@@ -20,7 +20,9 @@ public class Zapuskator {
         vsakoRaznoe.prostoMetod ();
         System.out.println("****************");
       //  vsakoRaznoe.proverkaDeleniaNaNol();
-        ugadiaChisla.ugadai();
+      //  ugadiaChisla.ugadai();
+
+        vsakoRaznoe.rabotaSoSwichem ();
 
     }
 
