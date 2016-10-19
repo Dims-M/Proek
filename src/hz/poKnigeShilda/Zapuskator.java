@@ -24,6 +24,9 @@ public class Zapuskator {
 
         vsakoRaznoe.rabotaSoSwichem ();
 
+        VichislenieQvadratnogoKornia vichislenieQvadratnogoKornia = new VichislenieQvadratnogoKornia();
+        vichislenieQvadratnogoKornia.vichisleniQvadratKornia();
+
     }
 
 
