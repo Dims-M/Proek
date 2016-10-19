@@ -22,9 +22,11 @@ public class UgadiaChisla {
             Random random = new Random();
 
             znach = random.nextInt(10);
-
+            System.out.println("*************************");
+            System.out.println("VIKING SOFT представляют");
+            System.out.println("*************************");
             System.out.println("Введите цифру от 0 - 10. \nПроверьте Свою Удачу :))");
-            //System.out.println("Подсказка " + znach);
+          //  System.out.println("Подсказка " + znach);
             Scanner scanner = new Scanner(System.in);
             //  Scanner scanner1 = new Scanner(System.in);
 
@@ -48,7 +50,7 @@ public class UgadiaChisla {
 
             if (counter == 1) {
 
-            } else {
+            } else if (counter == 2){
                 System.out.println("Вы закончили игру");
                 System.out.println("Exit");
                 proverka = false;
