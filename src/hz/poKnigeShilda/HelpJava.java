@@ -45,6 +45,7 @@ public class HelpJava {
 
                 case 0: {
                     System.out.println("Выход из справки...");
+                    System.out.println("Exit");
                     vihodIzukla = false;
                 }
 

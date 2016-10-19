@@ -8,7 +8,12 @@ import java.util.Scanner;
  */
 public class UgadiaChisla {
 
-    public void ugadai() {
+    public static void main(String[] args) {
+
+        ugadai();
+
+    }
+    public static void ugadai() {
         int znach = 8;
         boolean proverka = true;
 
@@ -19,7 +24,7 @@ public class UgadiaChisla {
             znach = random.nextInt(10);
 
             System.out.println("Введите цифру от 0 - 10. \nПроверьте Свою Удачу :))");
-            System.out.println("Подсказка " + znach);
+            //System.out.println("Подсказка " + znach);
             Scanner scanner = new Scanner(System.in);
             //  Scanner scanner1 = new Scanner(System.in);
 
@@ -45,6 +50,7 @@ public class UgadiaChisla {
 
             } else {
                 System.out.println("Вы закончили игру");
+                System.out.println("Exit");
                 proverka = false;
             }
         }
