@@ -7,14 +7,23 @@ import java.util.Scanner;
  */
 public class Randomm {
 
+    int hranenie [] = new int[10];
+
+    public static void main(String[] args) {
+
+        Randomm  nandomm = new Randomm();
+        nandomm.raschetRandom();
+
+    }
 
     public void raschetRandom (){
 
+        zapolnenie (); // 1111111
         boolean medodWhile = true;
 
         int viborIgrokov, nachalo = 0;
 
-        int hranenie [] = new int[10];
+       // int hranenie [] = new int[10];
 
         String igrok1 = "Выбран игрок № 1";
        String igrok2 = "Выбран игрок № 2";
@@ -27,48 +36,76 @@ public class Randomm {
 
         while (medodWhile) {
 
-            System.out.println("Запустился рандомный метод");
+          //  System.out.println("Запустился рандомный метод");
 
             System.out.println("Для выбора игроков нажмите 1 для выхода 0");
 
-            Scanner scanner1 = new Scanner(System.in);
-            nachalo = scanner1.nextInt();
-
             Scanner scanner = new Scanner(System.in);
             viborIgrokov = scanner.nextInt();
+           // System.out.println("Выбирайте игроков из списка");
 
-            if (nachalo == 1) {
+            if (viborIgrokov == 1) {
+                System.out.println("Выбирайте игроков из списка");
+                Scanner scanner1 = new Scanner(System.in);
+                nachalo = scanner1.nextInt();
 
-                switch (viborIgrokov) {
+                // Scanner scanner = new Scanner(System.in);
+                // viborIgrokov = scanner.nextInt();
+                // System.out.println("Выбирайте игроков из списка");
 
-                    case 1: {
-                        System.out.println(igrok1);
+                if (nachalo == 0) {
+                    System.out.println("Выход");
+                    vivodIgrokov();
+                    medodWhile = false;
+                    break;
+                }
 
-                        break;
-                    }
+                if (nachalo == 1) {
 
-                    case 2: {
-                        System.out.println(igrok2);
-                        break;
-                    }
+                    switch (viborIgrokov) {
 
-                    case 3: {
-                        System.out.println(igrok3);
-                        break;
-                    }
+                        case 1: {
+                            System.out.println(igrok1);
+                            hranenieMassiva(1);
+                            break;
+                        }
 
-                    default:
-                        System.out.println("Выберите игроков");
+                        case 2: {
+                            System.out.println(igrok2);
+                            hranenieMassiva(2);
+                            break;
+                        }
 
-                } //клнец свича
+                        case 3: {
+                            System.out.println(igrok3);
+                            hranenieMassiva(3);
+                            break;
+                        }
 
-            } //конец начального Ифа
+                        default:
+                            System.out.println("Выберите игроков");
 
+                    } //клнец свича
+
+                } //конец начального Ифа
+
+            } // конец выбора 1 или 0
+
+            if (viborIgrokov ==0){
+                System.out.println("Выход");
+                vivodIgrokov();
+                medodWhile = false;
+                break;
+            }
+            else {
+                System.out.println("DFDFFFFFFF0");
+                break;
+            }
 
 
         }// конец корневого метода Вайл
 
-
+       // vivodIgrokov ();
 
 
 
@@ -76,17 +113,42 @@ public class Randomm {
     } // конец метода
 
 
+    public void zapolnenie (){
+        for (int i = 0; i < hranenie.length ; i++ ){
+            hranenie[i] = 0;
+        }
+    }
 
-    public void hranenieMassiva (int count){
+
+    public void hranenieMassiva (int count) {
 
         int chetchik = count;
 
-        for (int i = 0; ; ){
+        for (int i = 0; i < hranenie.length; i++) {
+
+            if (hranenie[i] == 0) {
+               // for (int y = 0; y < hranenie.length; i++)
+                    hranenie[i] = chetchik;
+                break;
+            }
+    }
+       }
+
+
+    public void vivodIgrokov (){
+        for (int i = 0; i< hranenie.length; i++){
+
+            if (hranenie[i] !=0 ){
+                System.out.println(hranenie[i]);
+            }
+
+          //  for (int x = 0; x<hranenie.length; x++)
 
         }
 
 
     }
+
 
 
 
