@@ -1,5 +1,7 @@
 package hz.poKnigeShilda;
 
+import ruychebnieYroki.com.moyRoboti.Robot;
+
 /**
  * Created by Администратор on 11.10.2016.
  */
@@ -99,6 +101,29 @@ public class VsakoRaznoe {
         }
 
 
+
+    public void rabotaS_Metodami (){
+
+        Robot robot = new Robot(10, 50);
+        Robot robot1 = robot; // Присваиваем объектной переменной ссылку на другой обьект
+
+        System.out.println("Присваиваем объектной переменной ссылку на другой обьект");
+
+        System.out.println("Выводим содержимое ссылок " + robot+ "\n" + robot1);
+
+        System.out.println("Или");
+
+        PustoiClass pustoiClass = new PustoiClass();
+        PustoiClass pustoiClass1 = pustoiClass;
+
+        System.out.println("Cодержимое класса" + pustoiClass + " и "+ pustoiClass1);
+
+
+
+
+
+
+    }
 
 
         } // коннец класса
