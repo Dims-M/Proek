@@ -46,8 +46,38 @@ public class Zapuskator {
 
         car.infaOClasse();
         car1.infaOClasse();
+        System.out.println("*************************************");
+        zapusk ();
+
+
+
+
+    } // конец метода Майн
+
+
+    public static void zapusk (){
+        VsakoRaznoe rabotaSparametramiMetoda = new VsakoRaznoe();
+       // rabotaSparametramiMetoda.rabotaSPeredacheiParametrov(10);
+      //  S/tem.out.println(rabotaSparametramiMetoda.rabotaSParametrom(10));
+
+        System.out.println("Результат работы равен "+ rabotaSparametramiMetoda.rabotaSParametrom(12) );
+
+
+        if (rabotaSparametramiMetoda.rabotaSParametrom(10)){
+            System.out.println("Результат работы равен "+ rabotaSparametramiMetoda.rabotaSParametrom(5) );
+        }
+
+        if (rabotaSparametramiMetoda.rabotaSParametrom(12)){
+            System.out.println("Результат работы равен "+ rabotaSparametramiMetoda.rabotaSParametrom(12) );
+        }
+
+        if (rabotaSparametramiMetoda.rabotaSParametrom(5)){
+            System.out.println("Результат работы равен "+ rabotaSparametramiMetoda.rabotaSParametrom(5) );
+        }
+
+        else {
+            System.out.println("abuyz");
+        }
 
     }
-
-
 }

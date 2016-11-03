@@ -118,12 +118,38 @@ public class VsakoRaznoe {
 
         System.out.println("Cодержимое класса" + pustoiClass + " и "+ pustoiClass1);
 
-
-
-
-
-
     }
+
+    public boolean rabotaSParametrom (int count){
+
+        if ( count == 10 && count <10){
+            return true;
+        }
+
+       else if (count > 10){
+            return false;
+        }
+        return false;
+    }
+
+
+    public void rabotaSPeredacheiParametrov (int znach){
+
+        if (znach == 5){
+            rabotaSParametrom (znach) ;
+        }
+
+        if (znach == 10){
+            rabotaSParametrom (znach) ;
+        }
+
+        if (znach == 11){
+            rabotaSParametrom (znach) ;
+        }
+    }
+
+
+
 
 
         } // коннец класса
