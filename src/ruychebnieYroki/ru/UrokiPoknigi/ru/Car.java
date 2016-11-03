@@ -33,7 +33,7 @@ public class Car {
         System.out.println("Модель машины " + svetAvto +"\n" + "Цвет машины  "+ "\n"+ "Количество пасажиров "+ kolichestvoPasajirov+"\n"+
                 "Емкость топливного бака "+ fuelToplivo + "\n" + "" + "Максимальная скорость "+ maxScorost + "\n"+
                 "Текущая скорость = "+ tekushaiScorost +"\n"+
-                "Текущий расход топлива состявляет"+ tekushiyRashod ()+"\n"+
+                "Текущий расход топлива состявляет "+ tekushiyRashod ()+"\n"+
                 "Запас хода на текущий момен состовляет = " + dlinaPuti()+"\n"+
                 "Стоимость 1 литра топлива =  " + stoimostLitraTopliva + " руб"+ "\n"+
                 "Стоимость содержимого топливного бака состовляет = " + (fuelToplivo *stoimostLitraTopliva) + "\n"+

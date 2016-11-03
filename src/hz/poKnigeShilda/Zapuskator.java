@@ -36,6 +36,7 @@ public class Zapuskator {
         System.out.println("*************************************");
 
         Car car = new Car();
+        Car car1 = car;
         car.maxSkorost();
         car.kolichestvoPasajirov = 15;
         car.fuelToplivo = 50;
@@ -44,6 +45,7 @@ public class Zapuskator {
         car.rashodTopliva = 12;
 
         car.infaOClasse();
+        car1.infaOClasse();
 
     }
 
