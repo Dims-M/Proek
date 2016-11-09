@@ -121,21 +121,23 @@ public class VsakoRaznoe {
     }
 
     public boolean rabotaSParametrom (int count){
+     //  VichislenieOstatkaOtDelenia(count);
 
-        if ( count == 10 && count <10){
+        if ( count <=10){
             return true;
         }
 
-       else if (count > 10){
-            return false;
-        }
-        return false;
+       else   return false;
+
+
     }
 
 
     public void rabotaSPeredacheiParametrov (int znach){
 
-        if (znach == 5){
+       // VichislenieOstatkaOtDelenia(znach);
+
+        if (znach <= 5){
             rabotaSParametrom (znach) ;
         }
 
@@ -143,12 +145,57 @@ public class VsakoRaznoe {
             rabotaSParametrom (znach) ;
         }
 
-        if (znach == 11){
+        if (znach >= 11){
             rabotaSParametrom (znach) ;
         }
+
+    }
+
+    public static void zapusk (int abs) {
+        VsakoRaznoe rabotaSparametramiMetoda = new VsakoRaznoe();
+        // rabotaSparametramiMetoda.rabotaSPeredacheiParametrov(10);
+        //  S/tem.out.println(rabotaSparametramiMetoda.rabotaSParametrom(10));
+
+
+        System.out.println("Результат работы равен " + rabotaSparametramiMetoda.rabotaSParametrom(abs));
+
+
+        if (rabotaSparametramiMetoda.rabotaSParametrom(abs)) {
+            System.out.println("Результат работы равен " + rabotaSparametramiMetoda.rabotaSParametrom(5));
+        }
+
+        if (rabotaSparametramiMetoda.rabotaSParametrom(abs)) {
+            System.out.println("Результат работы равен " + rabotaSparametramiMetoda.rabotaSParametrom(12));
+        }
+
+        if (rabotaSparametramiMetoda.rabotaSParametrom(abs)) {
+            System.out.println("Результат работы равен " + rabotaSparametramiMetoda.rabotaSParametrom(5));
+        }
+
+        else {
+            System.out.println("abuyz");
+        }
+        VichislenieOstatkaOtDelenia(abs);
+
     }
 
 
+    public static void VichislenieOstatkaOtDelenia (int znach1){
+
+        double asd = znach1 % 2;
+        if ((znach1 % 2) == 0){
+
+            System.out.println("Число четное Остаток от деления = " + asd);
+
+        }
+        else {
+            System.out.println("Число НЕЧЕТНОЕ Остаток от деления = " + asd);
+        }
+
+
+
+
+    }
 
 
 

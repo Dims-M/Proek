@@ -4,6 +4,8 @@ package hz.poKnigeShilda;
 
 import ruychebnieYroki.ru.UrokiPoknigi.ru.Car;
 
+import static hz.poKnigeShilda.VsakoRaznoe.zapusk;
+
 /**
  * Created by Администратор on 11.10.2016.
  */
@@ -47,7 +49,14 @@ public class Zapuskator {
         car.infaOClasse();
         car1.infaOClasse();
         System.out.println("*************************************");
-        zapusk ();
+
+        zapusk (2);
+        System.out.println("*************************************");
+        RabotaSFinalizatoromq(0);
+
+
+
+
 
 
 
@@ -55,29 +64,18 @@ public class Zapuskator {
     } // конец метода Майн
 
 
-    public static void zapusk (){
-        VsakoRaznoe rabotaSparametramiMetoda = new VsakoRaznoe();
-       // rabotaSparametramiMetoda.rabotaSPeredacheiParametrov(10);
-      //  S/tem.out.println(rabotaSparametramiMetoda.rabotaSParametrom(10));
+    public static  void RabotaSFinalizatoromq ( int znach){
 
-        System.out.println("Результат работы равен "+ rabotaSparametramiMetoda.rabotaSParametrom(12) );
+        int count = 0;
+        RabotaSFinalizatorom rabotaSFinalizatorom = new RabotaSFinalizatorom (10);
 
-
-        if (rabotaSparametramiMetoda.rabotaSParametrom(10)){
-            System.out.println("Результат работы равен "+ rabotaSparametramiMetoda.rabotaSParametrom(5) );
-        }
-
-        if (rabotaSparametramiMetoda.rabotaSParametrom(12)){
-            System.out.println("Результат работы равен "+ rabotaSparametramiMetoda.rabotaSParametrom(12) );
-        }
-
-        if (rabotaSparametramiMetoda.rabotaSParametrom(5)){
-            System.out.println("Результат работы равен "+ rabotaSparametramiMetoda.rabotaSParametrom(5) );
-        }
-
-        else {
-            System.out.println("abuyz");
+        for (count = znach; count <= 1000000; count++){
+            rabotaSFinalizatorom.generasiaObekta(count);
+            // указываем какое количество обьекто нужно создать.
         }
 
     }
-}
+
+
+    }
+
