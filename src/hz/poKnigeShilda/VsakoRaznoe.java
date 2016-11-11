@@ -2,6 +2,8 @@ package hz.poKnigeShilda;
 
 import ruychebnieYroki.com.moyRoboti.Robot;
 
+import java.util.Scanner;
+
 /**
  * Created by Администратор on 11.10.2016.
  */
@@ -193,21 +195,61 @@ public class VsakoRaznoe {
         }
     }
 
+
+
+
     public static void rabotaSMassivom (){
         System.out.println("Работаем с массивами");
 
         String sozdanieMassiva = "Сначало указывается базовый тип, потом имя массива, с помощью new выделяется место и присваивается ссылка " +
                 "на переменную массива ";
-        int [] moiMassivi = new int[10];
+        String sozdanieMassiva2= "Создать переменную можно 2 способами. " +
+                " int [] moiMassivi = new int[10];" +
+                "и " +
+                " int [] moiMassivi " +
+                " moiMassivi = new int[10];";
 
-        for (int a = 0; a < moiMassivi.length; a++){
+        int [] moiMassivi = new int[10];
+        Randomm randomm = new Randomm();
+        Scanner scanner = new Scanner(System.in);
+
+        for (int a = 0; a < moiMassivi.length; a++) {
+
+            if (moiMassivi[a] == 0) {
+                moiMassivi[a] = (int) (Math.random() * 10);
+            }
+            //    int randomm = (int) (Math.random ()*10);
+            // c помощью метода рандом заполняем случайным числом от 0 до 10  и приводим к типу инт
+            System.out.println("Содержимое массива " + moiMassivi[a]);
+
+        }
+        for (int a = 0; a < moiMassivi.length; a++) {
+            int count = a;
+            if (moiMassivi[a] == 0) {
+                System.out.println("Содержимое массива под индексом "+ count + " равно = 0" + moiMassivi[a]);
+            }
+          //  System.out.println("Содержимое массива под индексом "+ moiMassivi[a] + " равно = 0" + moiMassivi[a]);
+        }
+
+        System.out.println("Вычисление Максмимального и Минимального значения в массиве \n Нажмите на клавишу 1 для вычесления значений" +
+                "или клавищу 0 для завершения работы метода \n И нажмите кнопку ЕНТР");
+        int znach = scanner.nextInt();
+        //Обьект Сканер для перехвата введенного значения
+
+        if (znach == 1){
 
         }
 
+        if (znach == 0){
+            System.out.println(" Программа завершила свою работу.");
+        }
+
+
+    } // конец метода работа с массивом
 
 
 
-    }
+
 
 
         } // коннец класса
