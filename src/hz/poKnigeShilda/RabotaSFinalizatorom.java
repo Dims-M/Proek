@@ -13,7 +13,7 @@ public class RabotaSFinalizatorom {
         }
 
     protected void finalize (){
-       // System.out.println(asd);
+       //System.out.println(asd);
         System.out.println("Процедура финализирована " + asd);
     }
 

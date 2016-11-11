@@ -191,12 +191,23 @@ public class VsakoRaznoe {
         else {
             System.out.println("Число НЕЧЕТНОЕ Остаток от деления = " + asd);
         }
+    }
+
+    public static void rabotaSMassivom (){
+        System.out.println("Работаем с массивами");
+
+        String sozdanieMassiva = "Сначало указывается базовый тип, потом имя массива, с помощью new выделяется место и присваивается ссылка " +
+                "на переменную массива ";
+        int [] moiMassivi = new int[10];
+
+        for (int a = 0; a < moiMassivi.length; a++){
+
+        }
 
 
 
 
     }
-
 
 
         } // коннец класса

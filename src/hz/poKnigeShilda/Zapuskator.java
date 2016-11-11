@@ -4,6 +4,7 @@ package hz.poKnigeShilda;
 
 import ruychebnieYroki.ru.UrokiPoknigi.ru.Car;
 
+import static hz.poKnigeShilda.VsakoRaznoe.rabotaSMassivom;
 import static hz.poKnigeShilda.VsakoRaznoe.zapusk;
 
 /**
@@ -52,18 +53,19 @@ public class Zapuskator {
 
         zapusk (2);
         System.out.println("*************************************");
-        RabotaSFinalizatoromq(0);
+      //  RabotaSFinalizatoromq(0);
+
+        System.out.println(intov (5,5));
+        System.out.println("*************************************");
+
+        rabotaSMassivom ();
 
 
 
+    } //  метода Майн
 
 
-
-
-
-    } // конец метода Майн
-
-
+    // метод вызывает создание пустых обьектов с последущим уничтожение сборщиком и с вызовом функции finalize
     public static  void RabotaSFinalizatoromq ( int znach){
 
         int count = 0;
@@ -73,6 +75,14 @@ public class Zapuskator {
             rabotaSFinalizatorom.generasiaObekta(count);
             // указываем какое количество обьекто нужно создать.
         }
+
+    }
+
+    public static double intov (int a, int b){
+
+       // double dobli = (double)a;
+
+        return a + b ;
 
     }
 
