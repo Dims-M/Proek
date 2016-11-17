@@ -209,7 +209,9 @@ public class VsakoRaznoe {
                 " int [] moiMassivi " +
                 " moiMassivi = new int[10];";
 
+        boolean proverka = true;
         int [] moiMassivi = new int[10];
+        int max, min = 0;
         Randomm randomm = new Randomm();
         Scanner scanner = new Scanner(System.in);
 
@@ -231,19 +233,43 @@ public class VsakoRaznoe {
           //  System.out.println("Содержимое массива под индексом "+ moiMassivi[a] + " равно = 0" + moiMassivi[a]);
         }
 
-        System.out.println("Вычисление Максмимального и Минимального значения в массиве \n Нажмите на клавишу 1 для вычесления значений" +
-                "или клавищу 0 для завершения работы метода \n И нажмите кнопку ЕНТР");
-        int znach = scanner.nextInt();
-        //Обьект Сканер для перехвата введенного значения
+        while (proverka) {
+            System.out.println(" Вычисление Максмимального и Минимального значения в массиве\n Нажмите на клавишу 1 для вычесления значений\n" +
+                    " или клавищу 0 для завершения работы метода \n И нажмите кнопку ЕНТР");
+            int znach = scanner.nextInt();
+            //Обьект Сканер для перехвата введенного значения
 
-        if (znach == 1){
+            if (znach == 1) {
+                // Вычиляем максимальное и минимальное значение
 
+                min = max = moiMassivi[0];
+
+                for (int i = 0; i < moiMassivi.length; i++){
+
+                    System.out.println("Текущие содержание массива = "+moiMassivi[i]);
+
+                    if (min < moiMassivi[i]){
+                        min = moiMassivi[i];
+                    }
+
+                    if (max > moiMassivi[i]){
+                        max = moiMassivi[i];
+                    }
+
+                }
+
+                System.out.println("Максимальное значение массива = " + max);
+                System.out.println("Минимальное значение массива = " + min);
+                System.out.println("Программа закончила свою работу!!!!!1");
+                proverka = false;
+
+            }
+
+            if (znach == 0) {
+                System.out.println(" Программа завершила свою работу.");
+                proverka = false;
+            }
         }
-
-        if (znach == 0){
-            System.out.println(" Программа завершила свою работу.");
-        }
-
 
     } // конец метода работа с массивом
 
