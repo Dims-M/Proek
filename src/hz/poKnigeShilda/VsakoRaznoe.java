@@ -2,6 +2,7 @@ package hz.poKnigeShilda;
 
 import ruychebnieYroki.com.moyRoboti.Robot;
 
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -275,7 +276,46 @@ public class VsakoRaznoe {
 
 
 
+    public static void  buble () {
+        // метод пузерьковой сортировки
+
+        int sortirivka[] = new int[10];
+        Random random = new Random();
+
+        for (int a = 0; a < sortirivka.length; a++) {
+            // c помощью метода рандом заполняем случайным числом от 0 до 10  и приводим к типу инт
+            if (sortirivka[a] == 0) {
+                sortirivka[a] = (int) (Math.random() * 100);
+            }
+        }
+        for (int sort : sortirivka) {
+            System.out.println("Текущие Неотсортированные данные в массиве " + sort);
+
+        }
+
+
+        System.out.println("***********************");
+
+        // сортируем массив по возрастанию от 0 -> 10
+        int temp; // временная переменная для хранения значений
+        int i=0;
+
+        for (i = 0; i< sortirivka.length; i++){
+
+            temp = sortirivka[0];
+            if (temp  <= sortirivka[i]){
+
+            }
+
+        }
+
+        for (int sort1 : sortirivka) {
+            System.out.println("Текущие Отсортированные Данные = " + sort1);
+        }
+
+    } // конец метода
 
 
 
-        } // коннец класса
+
+ } // коннец класса

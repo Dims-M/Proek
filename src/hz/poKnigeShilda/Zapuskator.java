@@ -4,6 +4,7 @@ package hz.poKnigeShilda;
 
 import ruychebnieYroki.ru.UrokiPoknigi.ru.Car;
 
+import static hz.poKnigeShilda.VsakoRaznoe.buble;
 import static hz.poKnigeShilda.VsakoRaznoe.rabotaSMassivom;
 import static hz.poKnigeShilda.VsakoRaznoe.zapusk;
 
@@ -58,7 +59,10 @@ public class Zapuskator {
         System.out.println(intov (5,5));
         System.out.println("*************************************");
 
-        rabotaSMassivom ();
+        // rabotaSMassivom ();
+
+        buble();
+
 
 
 
