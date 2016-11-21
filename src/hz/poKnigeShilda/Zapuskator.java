@@ -61,6 +61,7 @@ public class Zapuskator {
 
         buble();
         viviod();
+        copyMassiv( sortMassiv( randomMassivov ()));
 
 
 

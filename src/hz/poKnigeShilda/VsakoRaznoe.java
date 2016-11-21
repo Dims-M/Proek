@@ -322,7 +322,6 @@ public class VsakoRaznoe {
         } // конец метода
 
     public static void viviod() {
-
         System.out.println("Присваиваем ссылки на массивы");
 
         for (int sort1 : sortirivka) {
@@ -337,4 +336,80 @@ public class VsakoRaznoe {
         }
 
     }
+
+
+    public static int[] randomMassivov (){
+        System.out.println("Заполнение массивов");
+
+       int [] znach= new int[10];
+        Random random = new Random();
+        for (int i = 0; i < znach.length; i++){
+            znach[i] = random.nextInt(100);
+        }
+
+        for (int temp : znach){
+           System.out.println(temp);
+        }
+
+        return znach;
+    }
+
+
+    public static int [] sortMassiv (int massiv []){
+        System.out.println("Сортировка массивов");
+
+
+        int [] temp1 = new int[10];
+        temp1 = massiv;
+
+        for (int i = 0; i < temp1.length ; i++) {
+            for (int b = 0; b < i; b++) { // уменьшаем длину массива при каждой итерации
+                // temp = sortirivka[0];
+
+                if (temp1[b] > temp1[b + 1]) {
+                    int temp = sortirivka[b];
+
+                    temp1[b] = temp1[b + 1];
+                    sortirivka[b + 1] = temp;
+                }
+
+            }
+        }
+        for (int countMassiva : temp1){
+            System.out.println("Текущий порядок " + countMassiva);
+        }
+
+        return temp1;
+    }
+
+
+    public static void copyMassiv (int copy []){
+        System.out.println("Копирование массивов");
+
+
+
+      //  int dlinaMassiva =(int)  (copy[].length());
+
+        int  copySors [] = new int[10];
+        int [] copyS  = new int[10];;
+        copySors = copy;
+
+        if (copySors.length == copy.length){
+
+            for (int i = 0; i < copyS.length;i++){
+                copyS[i] = copySors[i];
+            }
+        }
+
+        for (int znoch : copyS){
+            System.out.println(""+znoch);
+        }
+
+       // int copii [] = new int copi[10];
+
+
+    }
+
+
+
  } // коннец класса
