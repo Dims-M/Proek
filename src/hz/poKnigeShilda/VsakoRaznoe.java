@@ -275,11 +275,12 @@ public class VsakoRaznoe {
     } // конец метода работа с массивом
 
 
+   public static int sortirivka[] = new int[10];
 
     public static void  buble () {
         // метод пузерьковой сортировки
 
-        int sortirivka[] = new int[10];
+
         Random random = new Random();
 
         for (int a = 0; a < sortirivka.length; a++) {
@@ -301,11 +302,11 @@ public class VsakoRaznoe {
         int temp; // временная переменная для хранения значений
         int b = 0;
 
-        for (int i = sortirivka[0]; i < sortirivka.length -1; i++) {
+        for (int i = 0; i < sortirivka.length ; i++) {
             for (b = 0; b < i; b++) { // уменьшаем длину массива при каждой итерации
                 // temp = sortirivka[0];
 
-                if (sortirivka[b] < sortirivka[b + 1]) {
+                if (sortirivka[b] > sortirivka[b + 1]) {
                     temp = sortirivka[b];
 
                     sortirivka[b] = sortirivka[b + 1];
@@ -320,7 +321,20 @@ public class VsakoRaznoe {
 
         } // конец метода
 
+    public static void viviod() {
 
+        System.out.println("Присваиваем ссылки на массивы");
 
+        for (int sort1 : sortirivka) {
+            System.out.println("Текущие Отсортированные Данные = " + sort1);
+        }
 
+        int [] sdfsdf;
+        sdfsdf = sortirivka;
+
+        for (int sort1 : sdfsdf) {
+            System.out.println("Текущие Отсортированные Данные = " + sort1);
+        }
+
+    }
  } // коннец класса
