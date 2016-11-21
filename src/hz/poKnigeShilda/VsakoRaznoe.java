@@ -296,24 +296,29 @@ public class VsakoRaznoe {
 
         System.out.println("***********************");
 
+
         // сортируем массив по возрастанию от 0 -> 10
         int temp; // временная переменная для хранения значений
-        int i=0;
+        int b = 0;
 
-        for (i = 0; i< sortirivka.length; i++){
+        for (int i = sortirivka[0]; i < sortirivka.length -1; i++) {
+            for (b = 0; b < i; b++) { // уменьшаем длину массива при каждой итерации
+                // temp = sortirivka[0];
 
-            temp = sortirivka[0];
-            if (temp  <= sortirivka[i]){
+                if (sortirivka[b] < sortirivka[b + 1]) {
+                    temp = sortirivka[b];
+
+                    sortirivka[b] = sortirivka[b + 1];
+                    sortirivka[b + 1] = temp;
+                }
 
             }
-
         }
+            for (int sort1 : sortirivka) {
+                System.out.println("Текущие Отсортированные Данные = " + sort1);
+            }
 
-        for (int sort1 : sortirivka) {
-            System.out.println("Текущие Отсортированные Данные = " + sort1);
-        }
-
-    } // конец метода
+        } // конец метода
 
 
 
