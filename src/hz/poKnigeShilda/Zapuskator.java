@@ -64,7 +64,12 @@ public class Zapuskator {
         copyMassiv( sortMassiv( randomMassivov ()));
         copyMassiv( sortMassivov( randomMassivov ()));
 
+        VsakoRaznoe2 primer = new VsakoRaznoe2(10);
+        primer.put('h');
+        primer.put('y');
+        primer.put('i');
 
+        System.out.println(primer.get());
 
 
 
