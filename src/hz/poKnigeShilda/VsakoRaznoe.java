@@ -2,6 +2,7 @@ package hz.poKnigeShilda;
 
 import ruychebnieYroki.com.moyRoboti.Robot;
 
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -341,7 +342,7 @@ public class VsakoRaznoe {
     public static int[] randomMassivov (){
         System.out.println("Заполнение массивов");
 
-       int [] znach= new int[10];
+       int [] znach= new int[50];
         Random random = new Random();
         for (int i = 0; i < znach.length; i++){
             znach[i] = random.nextInt(100);
@@ -358,21 +359,21 @@ public class VsakoRaznoe {
     public static int [] sortMassiv (int massiv []){
         System.out.println("Сортировка массивов");
 
-        int dlinaMassiva = massiv.length;
+      //  int dlinaMassiva = massiv.length;
 
 
-        int [] temp1 = new int[dlinaMassiva];
-        temp1 = massiv;
+        int [] temp1 = massiv; // new int[dlinaMassiva];
+       // temp1 = massiv;
 
         for (int i = 0; i < temp1.length ; i++) {
             for (int b = 0; b < i; b++) { // уменьшаем длину массива при каждой итерации
                 // temp = sortirivka[0];
 
                 if (temp1[b] < temp1[b + 1]) {
-                    int temp = sortirivka[b];
+                    int temp = temp1[b];
 
                     temp1[b] = temp1[b + 1];
-                    sortirivka[b + 1] = temp;
+                    temp1[b + 1] = temp;
                 }
 
             }
@@ -390,12 +391,12 @@ public class VsakoRaznoe {
     public static void copyMassiv (int copy []){
         System.out.println("Копирование массивов");
 
-
+        int dlinaMassiva = copy.length;
 
       //  int dlinaMassiva =(int)  (copy[].length());
 
         int  copySors [] = new int[10];
-        int [] copyS  = new int[10];;
+        int [] copyS  = new int[dlinaMassiva];;
         copySors = copy;
 
         if (copySors.length == copy.length){
@@ -409,7 +410,36 @@ public class VsakoRaznoe {
             System.out.println(""+znoch);
         }
 
-       // int copii [] = new int copi[10];
+    }
+
+    // cортировка с помощью класса Math
+
+    public static int[] sortMassivov (int abs []){
+        System.out.println("Сортировка массивов с помощью встроеннного Класса Math " );
+
+        int countDlina = abs.length;
+
+        Integer [] sorti = new Integer[countDlina];
+
+        for (int i =0 ; i< sorti.length; i++  ){
+           // System.out.println("Произвдедена конвертация int в Integer \n");
+            sorti[i] = abs[i];
+
+        }
+        System.out.println("Произвдедена конвертация int в Integer \n");
+        Arrays.sort(sorti);
+        System.out.println("Сортированные данные = " + Arrays.toString(sorti));
+
+        for (int i =0 ; i< sorti.length; i++  ){
+           // sorti[i] = abs[i];
+            abs[i] = sorti[i];
+
+        }
+        System.out.println("Произвдедена конвертация Integer  в int \n");
+
+        return  abs;
+
+
 
 
     }
