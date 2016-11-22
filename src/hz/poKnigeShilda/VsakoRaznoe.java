@@ -358,15 +358,17 @@ public class VsakoRaznoe {
     public static int [] sortMassiv (int massiv []){
         System.out.println("Сортировка массивов");
 
+        int dlinaMassiva = massiv.length;
 
-        int [] temp1 = new int[10];
+
+        int [] temp1 = new int[dlinaMassiva];
         temp1 = massiv;
 
         for (int i = 0; i < temp1.length ; i++) {
             for (int b = 0; b < i; b++) { // уменьшаем длину массива при каждой итерации
                 // temp = sortirivka[0];
 
-                if (temp1[b] > temp1[b + 1]) {
+                if (temp1[b] < temp1[b + 1]) {
                     int temp = sortirivka[b];
 
                     temp1[b] = temp1[b + 1];
@@ -378,6 +380,8 @@ public class VsakoRaznoe {
         for (int countMassiva : temp1){
             System.out.println("Текущий порядок " + countMassiva);
         }
+
+        System.out.println("Длина массива = "+ temp1.length);
 
         return temp1;
     }
