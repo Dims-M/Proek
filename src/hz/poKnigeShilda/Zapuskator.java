@@ -69,8 +69,10 @@ public class Zapuskator {
         primer.put('y');
         primer.put('i');
 
-        System.out.println(primer.get());
+     //   System.out.println(primer.get());
 
+        VsakoRaznoe2 primer1 = new VsakoRaznoe2(10);
+       // primer1.get();
 
 
 
