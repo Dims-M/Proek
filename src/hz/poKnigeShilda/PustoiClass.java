@@ -7,8 +7,8 @@ public class PustoiClass {
 
 
     public static void InfaOMetode (){
-
         System.out.println("Пустой класс");
+
 
     }
 
