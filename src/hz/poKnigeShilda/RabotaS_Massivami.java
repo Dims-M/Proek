@@ -1,6 +1,7 @@
 package hz.poKnigeShilda;
 
 import java.util.Random;
+import java.util.Scanner;
 
 /**
  * Created by Администратор on 06.12.2016.
@@ -48,6 +49,67 @@ public class RabotaS_Massivami {
             }
         }
     }
+
+    public static void poiskPoZnacheniy (int mass[] ,int znach ){
+        System.out.println("Выполняется поиск.....Ищется значение "+ znach);
+        int index1 = 0;
+        for (int temp: mass){
+            index1 += index1;
+            if (temp == znach){
+                System.out.println("Найдено "+temp);
+                break;
+            }
+        }
+        System.out.println("Поиск завершен найдено "+znach+"на позиции"+ index1);
+
+    }
+
+
+    public static void poiskPoZnacheniyString (String mass[] ,String znach ){
+        System.out.println("Выполняется поиск.....Ищется значение "+ znach);
+        int index1 = 0;
+        boolean proverka = false;
+
+        for (String temp: mass){
+            index1 += 1;
+            if (temp == znach){
+                System.out.println("Найдено "+temp);
+                proverka = true;
+                break;
+            }
+        }
+        if (proverka)
+        System.out.println("Поиск завершен найдено "+znach+" на позиции "+ index1);
+    }
+
+    public static void poiskPoZnacheniyStringSkaner (String [] mass){
+        System.out.println("введите слово для поиска и нажмите ЕNTER");
+        int count =0 ;
+        boolean proverka = false;
+        Scanner scanner = new Scanner(System.in);
+        String scanerTemp = scanner.nextLine();
+
+        System.out.println("Происходит поиск...Значения "+scanerTemp);
+
+        for (String str: mass ){
+            count = count+1;
+            if (str == scanerTemp){
+
+                System.out.println("Нужное значение найдено: " + "Нужное вам значение находится в индексе = "+ count);
+                proverka = true;
+            }
+
+           break;
+
+        }
+
+        if (proverka){
+            System.out.println("Поиск завершен");
+        }
+
+
+    }
+
 
     public static int[][] randomIntMassivaDvuhmernoho (int mass [][]) {
         int tempInt =0;
