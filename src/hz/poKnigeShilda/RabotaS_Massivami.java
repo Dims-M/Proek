@@ -84,22 +84,25 @@ public class RabotaS_Massivami {
 
     public static void poiskPoZnacheniyStringSkaner (String [] mass){
         System.out.println("введите слово для поиска и нажмите ЕNTER");
-        int count =0 ;
-        boolean proverka = false;
         Scanner scanner = new Scanner(System.in);
         String scanerTemp = scanner.nextLine();
+        int count =0 ;
+        boolean proverka = false;
+
 
         System.out.println("Происходит поиск...Значения "+scanerTemp);
 
         for (String str: mass ){
             count = count+1;
+
             if (str == scanerTemp){
 
                 System.out.println("Нужное значение найдено: " + "Нужное вам значение находится в индексе = "+ count);
                 proverka = true;
+                break;
             }
 
-           break;
+
 
         }
 
