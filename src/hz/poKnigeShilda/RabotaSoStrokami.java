@@ -7,6 +7,7 @@ public class RabotaSoStrokami {
 
     public static void main(String[] args) {
 
+        String poiskk ="ст";
         String infaOClasse = "Класс для работы со строками!";
         String test = "Тестовая строка!";
         String test2 = "Тестовая строка#2!";
@@ -22,8 +23,19 @@ public class RabotaSoStrokami {
         razdelitelZvedochek();
         proverkaNdline(test,test2);
         System.out.println(test.compareTo(test2));
+        razdelitelZvedochek();
 
+        System.out.println("В текущем индексе содержится символ = "+ test.charAt(2));
+        System.out.println("Начальное вхождение первого символа "+test.indexOf(poiskk));
+        razdelitelZvedochek();
 
+        int temp1 = test.length();
+        String nowStr =   test.substring(0 , temp1);
+        System.out.println("Созданна новая строка по индексу от 0 до 1");
+        System.out.println(nowStr);
+        razdelitelZvedochek();
+
+        rabotaSoSwitch("Один");
 
 
 
@@ -58,7 +70,33 @@ public class RabotaSoStrokami {
         else {
             System.out.println("Первая строка больше втророй!!");
         }
+    }
 
+    public static void rabotaSoSwitch (String string){
+        System.out.println("Работа со свичем");
+        switch (string){
+
+            case "Один":{
+                String qwe = "Один";
+                System.out.println("Сработал свитч Значение = "+ qwe);
+                break;
+            }
+
+
+            case "Тестовая строка!":{
+                String qwe = "Тестовая строка!";
+                System.out.println("Сработал свитч Значение = "+ qwe);
+                break;
+            }
+
+            case "Тестовая строка#2!":{
+                String qwe = "Тестовая строка#2!";
+                System.out.println("Сработал свитч Значение = "+ qwe);
+                break;
+            }
+
+
+        }// конец
 
     }
 
