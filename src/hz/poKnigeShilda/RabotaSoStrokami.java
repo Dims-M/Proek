@@ -1,5 +1,7 @@
 package hz.poKnigeShilda;
 
+import java.util.Scanner;
+
 /**
  * Created by Администратор on 13.12.2016.
  */
@@ -11,7 +13,10 @@ public class RabotaSoStrokami {
         String infaOClasse = "Класс для работы со строками!";
         String test = "Тестовая строка!";
         String test2 = "Тестовая строка#2!";
+
         boolean proverka = false;
+
+        String[]  poneSpravka = {"Руслан", "8214522","Ринат","4589525","Марат","147511"};
 
         System.out.println("Эксперементы над строками!");
         System.out.println("Длинна текущей строкм = "+test.length());
@@ -37,6 +42,9 @@ public class RabotaSoStrokami {
 
         rabotaSoSwitch("Один");
 
+        razdelitelZvedochek();
+
+        phoneSpravochic(poneSpravka, "Марат");
 
 
     }
@@ -94,12 +102,69 @@ public class RabotaSoStrokami {
                 System.out.println("Сработал свитч Значение = "+ qwe);
                 break;
             }
-
-
         }// конец
 
     }
 
+    public static String phoneSpravochic (String [] strings, String poisk ){
+
+        System.out.println("Работа со  телефоноым спавочником");;
+        System.out.println("Поиск в телефонном справочником...Ищем значение.."+poisk);
+        int count = 0;
+
+        boolean control = true;
+
+        Scanner scanner = new Scanner(System.in);
+
+
+        for (String temp : strings){
+
+            if (temp == poisk){
+                System.out.println("Найдено = "+temp);
+                break;
+            }
+            count++;
+        }
+        System.out.println("Поиск завершен. Данное значение находится под в индексе "+count);
+        String itog = "Искомое значение" + poisk +" находится под в индексе "+ count;
+
+        while (control){
+            System.out.println("Хотите посмотеть все номера?");
+            System.out.println("Если да то нажмите 1 или наберите 'Да' \n" +
+                                "Если хотите выйте но нажмите 0 или наберите 'Нет' ");
+
+           String vopros = scanner.nextLine();
+            int coun123 = 0;
+
+            switch (vopros){
+
+                case "1" :
+                case "Да" :
+                case "ДА" :
+
+                    for (String str :strings ){
+                        System.out.println(str);
+                        coun123++;
+                    }
+                    System.out.println("Всего телефонных номеров в спавочнике "+coun123);
+                    control  = false;
+                    break;
+
+
+                case "0" :
+                case "Нет" :
+                case "нет" :
+                case "НЕТ" :
+                    control  = false;
+                    break;
+
+            } // конец свича
+
+
+        }
+        System.out.println("Программа закончила свою работу");
+        return itog;
+    }
 
 
 }
