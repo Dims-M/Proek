@@ -13,9 +13,9 @@ public class Main  {
     public static void main(String[] args) throws ParseException {
 
         // Вывод даты
-       // vivodDati();
+       vivodDati();
 
-        strokaDate ();
+        //strokaDate ();
 
     }// Конец
 
