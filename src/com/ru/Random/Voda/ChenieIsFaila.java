@@ -1,4 +1,6 @@
 package com.ru.Random.Voda;
+//import com.sun.org.apache.xpath.internal.operations.String;
+
 import java.io.*;
 import java.io.FileWriter;
 import java.text.SimpleDateFormat;
@@ -10,12 +12,16 @@ import java.util.Scanner;
  */
 public class ChenieIsFaila {
 
+   private static String fileName = "C:\\sozdanieI_ZapisFaila.txt";
+   private static String text  = "C:\\tempLogChetieFaila.txt";
+  // private static String text  = "апппппп";
+
     public static void main(String[] args) {
 
         //zapisFaila ();
        // chenoeFailov ();
-        zapisDateV_Fail ();
-
+      //  zapisDateV_Fail ();
+        sozdanieI_ZapisFaila(fileName,text);
 
     }  // конец майла
 
@@ -111,12 +117,55 @@ public class ChenieIsFaila {
 
 
 
-    public static void sozdanieI_ZapisFaila (){
+    public static void sozdanieI_ZapisFaila (String fileName, String text){
+       // text =  ;
+        // В качестве параметров указываем имя файла и сам текст
         System.out.println("Создание и запись файла");
 
+        // Обьект для работы с датой.
+        Date moiaData = new Date();
+        SimpleDateFormat dateFormat =
+                new SimpleDateFormat("'Текущая Дата: 'E dd.MM.yyyy'\nВремя: ' hh:mm:ss");
+         // Обьект для вывода форматированой даты
+
+        // Создаем файл. В качестве параметров указываем строковый fileName
+        File file = new File(fileName);
+        //try(FileWriter writer = new FileWriter(istocnik, true)
 
 
-    }
+        try  { PrintWriter out = new PrintWriter(text);
+            // Проверка исключительной ситуации
+            //проверяем, что если файл не существует то создаем его
+            if(!file.exists()){
+                file.createNewFile();
+            }
+
+            //PrintWriter обеспечит возможности записи в файл
+          //  PrintWriter out = new PrintWriter(file.getAbsoluteFile());
+            out.write(text); // Передаем в строке адрес файла который нам нужно прочитать.
+            out.append(text);
+            out.append('\n');
+            out.append(dateFormat.format(moiaData));
+            out.append(" ");
+
+
+
+            try {
+                //Записываем текст у файл
+               // out.print(text);
+            } finally {
+                //После чего мы должны закрыть файл
+                //Иначе файл не запишется
+                out.close();
+            }
+        } catch(IOException e) {
+            throw new RuntimeException(e);
+        }
+
+
+
+
+    } // конец метода sozdanieI_ZapisFaila
 
 
 
