@@ -16,7 +16,7 @@ public class ChenieIsFaila {
    private static String text  = "C:\\tempLogChetieFaila.txt";
   // private static String text  = "апппппп";
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
 
         //zapisFaila ();
        // chenoeFailov ();
@@ -133,31 +133,44 @@ public class ChenieIsFaila {
         //try(FileWriter writer = new FileWriter(istocnik, true)
 
 
-        try  { PrintWriter out = new PrintWriter(text);
+      //  try  { PrintWriter out = new PrintWriter(text);
+        try  { FileWriter out = new FileWriter(fileName, true);
             // Проверка исключительной ситуации
             //проверяем, что если файл не существует то создаем его
             if(!file.exists()){
                 file.createNewFile();
             }
 
-            //PrintWriter обеспечит возможности записи в файл
+            FileReader reader = new FileReader(text);
+
+                // читаем посимвольно
+                int c;
+                while((c=reader.read())!=-1){
+
+                   // System.out.print((char)c);
+                }
+
+                //PrintWriter обеспечит возможности записи в файл
           //  PrintWriter out = new PrintWriter(file.getAbsoluteFile());
+            out.append('\n');
             out.write(text); // Передаем в строке адрес файла который нам нужно прочитать.
-            out.append(text);
+           // out.append(text);
             out.append('\n');
             out.append(dateFormat.format(moiaData));
             out.append(" ");
+            //out.print(text);
+            out.flush();
+            out.close();
 
 
-
-            try {
+           // try {
                 //Записываем текст у файл
                // out.print(text);
-            } finally {
+          //  } finally {
                 //После чего мы должны закрыть файл
                 //Иначе файл не запишется
-                out.close();
-            }
+             //   out.close();
+          //  }
         } catch(IOException e) {
             throw new RuntimeException(e);
         }
