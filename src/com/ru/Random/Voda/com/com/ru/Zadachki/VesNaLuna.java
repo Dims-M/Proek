@@ -80,6 +80,7 @@ public class VesNaLuna {
                 System.out.print((char) c);
 
             }
+
             // Вывод в случае ошибки.
         } catch (IOException e) {
             e.printStackTrace();
