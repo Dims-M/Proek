@@ -35,7 +35,7 @@ public class SchetSimvolov {
         // Обьект для вывода форматированой даты
 
         // указываем место хранение текстового файла Обращений
-        String istocnik = "C:\\zadachki\\vesNaLune.txt";
+        String istocnik = "C:\\zadachki\\SchetSimvolov.txt";
 
         try (FileWriter writer = new FileWriter(istocnik, true)) {
             // запись всей строки
