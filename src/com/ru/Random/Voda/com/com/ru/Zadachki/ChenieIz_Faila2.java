@@ -16,12 +16,15 @@ public class ChenieIz_Faila2 {
     }
 
 
-    public static void chenieIzFaila (){
+    public static String chenieIzFaila (){
 
         System.out.println("Чтение из текстого файла");
 
         // место хранение файла
         String mestoHranenieFaila = "C:\\zadachki\\testNaChenie.txt";
+
+        // Строка для хранения и вывода строк из хайла
+        String strokaTemp = " ";
 
         try {
 
@@ -30,9 +33,6 @@ public class ChenieIz_Faila2 {
 
             //Cпециальный метод для чтения из файла
             BufferedReader chenie = new BufferedReader(new InputStreamReader( fileInputStream));
-
-            // Строка для хранения и вывода строк из хайла
-            String strokaTemp;
 
             // Детализация цикла
             // Цикл проходит по текстовому файлу который передан через параметры chenie.readLine()
@@ -52,6 +52,7 @@ public class ChenieIz_Faila2 {
         }
 
         zapicTextovogoFaila(Date_zapisatV_Fail (),mestoHranenieFaila);
+        return strokaTemp;
     }
 
 
