@@ -31,7 +31,8 @@ public class PoiskPoStroke3 {
         Pattern pattern = Pattern.compile(poisk);
 
         // Создаем обьектную переменную matcher класса Matcher для работы с источником поиска.
-        Matcher matcher =  pattern.matcher(istochnukPoiska); // В качестве параметра  pattern.matcher(istochnukPoiska) указываем где нам производить поиск
+        Matcher matcher =  pattern.matcher(istochnukPoiska);
+        // В качестве параметра  pattern.matcher(istochnukPoiska) указываем где нам производить поиск
 
         // В булевскую переменную указываем истина если поиск завершился успешно.
         boolean proverka = matcher.matches();
