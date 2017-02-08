@@ -1,6 +1,7 @@
 package com.ru.Random.Voda.com.com.ru.Zadachki;
 
 import java.util.Random;
+import java.util.Scanner;
 
 
 public class vsakoRaznoeMetodi {
@@ -13,8 +14,62 @@ public class vsakoRaznoeMetodi {
 
         //System.out.println( vivodMassivovInt(random_Massiva(sosdanieMassiva(10))));
 
-        System.out.println( slozenieMassivah(vivodMassivovInt(random_Massiva(sosdanieMassiva(100))))) ;
+        int[] temp = random_Massiva(sosdanieMassiva(10)) ;
+        vivodMassivovInt(temp);
+        SlojeieMassivaS_ParametromPeremennoiDlini (temp);
+        vivodMassivovInt(temp);
+        //*****
+        System.out.println(vizovI_RaschetFactoriala ( temp.length));
+        System.out.println(vizovI_RaschetFactoriala ( 5));
+        rabotaSoStrokamiFormatirovanie();
 
+
+
+    }
+
+    public static void rabotaSoSkanerom (){
+        System.out.println("Работаем с вводом данных с консоли.");
+
+        Scanner myscanner = new Scanner(System.in);
+
+        System.out.println("Введите что хотите и нажмите Ентр");
+
+        String muStroca = myscanner.nextLine();
+
+    }
+
+    public static void rabotaSoStrokamiFormatirovanie(){
+        System.out.println("Работа с форматирование строк.");
+
+        int a=100;
+        String string = "строка";
+        double double1 = 10.5;
+        char simvol = 'S';
+
+        System.out.println();
+        System.out.printf("Выводим интовое значение переменной а: "+"%d",a );
+        System.out.println();
+        System.out.printf("Выводим Строковое значение переменной string: "+"%s ",string);
+        System.out.println();
+        System.out.printf("Выводим Символьное значение переменной simvol: "+"%c ",simvol);
+        System.out.println();
+        System.out.printf("Выводим Числовое значение с плащающей точкой  переменной double1:"+"%f ",double1);
+
+
+    }
+
+    public static int vizovI_RaschetFactoriala ( int znach){
+        System.out.println("Расчет факториала");
+        System.out.println("Вы ввели значение "+znach);
+        System.out.println("Происходит расчет и вывод факториала");
+
+        int rezultat = 1;
+
+        for (int i = 1; i <znach; i++){
+            rezultat *= i;
+            // высчитываем результат
+        }
+        return rezultat;
     }
 
     public static int SlozenieChisel(int pervoeChislo, int vtoroeChislo ){
@@ -67,14 +122,14 @@ public class vsakoRaznoeMetodi {
         return massiv;
     }
 
-    public static void vivodMassivovInt (int massiv []){
+    public static int vivodMassivovInt (int massiv []){
 
         System.out.println("Вывод содержимого массива");
 
         for (int tempMassiva : massiv){
             System.out.println(tempMassiva);
         }
-       // return "Выполнено";
+        return 1;
     }
 
 
@@ -95,6 +150,19 @@ public class vsakoRaznoeMetodi {
         }
         return rezultat;
     }
+
+    public static void SlojeieMassivaS_ParametromPeremennoiDlini (int...mass){
+
+        System.out.println("Сложение инотовго массива");
+        int tempInt = 0;
+        for (int i = 0; i < mass.length; i++){
+         tempInt += mass[i];
+            mass[i]=tempInt;
+
+        }
+        System.out.println("Завершено");
+    }
+
 
 
 } // конец класса
