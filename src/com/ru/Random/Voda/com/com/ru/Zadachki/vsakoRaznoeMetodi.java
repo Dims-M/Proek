@@ -25,7 +25,28 @@ public class vsakoRaznoeMetodi {
      //   System.out.println(vizovI_RaschetFactoriala ( 5));
       //  rabotaSoStrokamiFormatirovanie();
         /////************************
-        rabotaSoSkanerom ();
+       // rabotaSoSkanerom ();
+
+        /// создание и вывод в консоль обьекта
+        sozdanieObekta ("Руслан", "Большой", 27);
+
+
+
+    }
+
+    public static void sozdanieObekta (String name, String opit, int vozrast){
+        System.out.println("Происходит создание обьекта");
+        Human human1 = new Human(name, opit,vozrast);
+
+        System.out.println(human1.toString());
+
+    }
+
+
+
+    public static void vivodObekta (Object object){
+        Object myobject = new Object();
+        myobject = object;
 
 
     }
