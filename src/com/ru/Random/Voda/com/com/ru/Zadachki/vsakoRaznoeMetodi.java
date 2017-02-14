@@ -3,6 +3,8 @@ package com.ru.Random.Voda.com.com.ru.Zadachki;
 import java.util.Random;
 import java.util.Scanner;
 
+import static com.ru.Random.Voda.com.com.ru.Zadachki.ChenieIz_Faila2.Date_zapisatV_Fail;
+import static com.ru.Random.Voda.com.com.ru.Zadachki.ChenieIz_Faila2.zapicDannihIzMassiva;
 import static com.ru.Random.Voda.com.com.ru.Zadachki.ChenieIz_Faila2.zapicTextovogoFaila;
 
 
@@ -17,9 +19,9 @@ public class vsakoRaznoeMetodi {
         //System.out.println( vivodMassivovInt(random_Massiva(sosdanieMassiva(10))));
 
         int[] temp = random_Massiva(sosdanieMassiva(10)) ;
-        vivodMassivovInt(temp);
-        SlojeieMassivaS_ParametromPeremennoiDlini (temp);
-        vivodMassivovInt(temp);
+     //   vivodMassivovInt(temp);
+      //  SlojeieMassivaS_ParametromPeremennoiDlini (temp);
+       // vivodMassivovInt(temp);
         //*****
       //  System.out.println(vizovI_RaschetFactoriala ( temp.length));
      //   System.out.println(vizovI_RaschetFactoriala ( 5));
@@ -28,7 +30,10 @@ public class vsakoRaznoeMetodi {
        // rabotaSoSkanerom ();
 
         /// создание и вывод в консоль обьекта
-        sozdanieObekta ("Руслан", "Большой", 27);
+       // sozdanieObekta ("Руслан", "Большой", 27);
+
+        //
+        rabotaS_isqlicheniem (5);
 
 
 
@@ -44,12 +49,58 @@ public class vsakoRaznoeMetodi {
 
 
 
-    public static void vivodObekta (Object object){
-        Object myobject = new Object();
-        myobject = object;
+    public static void  rabotaS_isqlicheniem (int dlinaMassiv) {
 
+        try {
+
+        if (dlinaMassiv > 0) {
+
+            int[] mass = new int[dlinaMassiv];
+
+            int tempInt;
+            String tempIntLog = " ";
+            // Запись данных в лог
+            String mestoZapisi = "C:/zadachki/zapisVLog.txt";
+            //zapicDannihIzMassiva(tempIntLog,mestoZapisi);
+
+
+                for (int i = 0; i < mass.length; i++) {
+                    Random random = new Random();
+                    tempInt = random.nextInt(10);
+                    mass[i] = tempInt;
+                    tempIntLog = Integer.toString(tempInt);
+                    zapicDannihIzMassiva(tempIntLog, mestoZapisi);
+                    tempIntLog = "*";
+                    //System.out.println(tempInt);
+                }
+                zapicDannihIzMassiva(Date_zapisatV_Fail(), mestoZapisi);
+                //Date_zapisatV_Fail ();
+                // вывод данных из массива
+                for (int tempVivodMass : mass) {
+                    System.out.println(tempVivodMass);
+                }
+
+            } // конец ифа
+
+            else{
+                System.out.println("Некоректное заполнение длины(емкости) массива. Длина не может быть меньше или равна 0 ");
+            }
+
+        }
+
+        catch (Exception ex) {
+
+            ex.printStackTrace();
+            System.out.println("Вынужденое завершение работы...");
+
+
+        }
+        finally {
+            System.out.println("Завершение работы...");
+        }
 
     }
+
 
     public static void rabotaSoSkanerom (){
         System.out.println("Работаем с вводом данных с консоли.");

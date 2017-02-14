@@ -82,6 +82,32 @@ public class ChenieIz_Faila2 {
 
     }
 
+    public static void zapicDannihIzMassiva(String stroka, String istocnik ){
+        // Параметры: 1 что записывать, 2 куда записывать
+
+        // Детализация инструкций метода try
+        // создаем обьект для работы и записи данных в файл
+        try (FileWriter writer = new FileWriter(istocnik, true)) {
+
+            // запись всей строки
+            String text = stroka;
+           // writer.append('\n');
+            writer.write(text);
+            // запись по символам
+         //   writer.append('\n');
+
+            // writer.append(Date_zapisatV_Fail ());
+            writer.append('\n');
+            writer.flush();
+
+        } catch (IOException ex) {
+
+            System.out.println(ex.getMessage());
+            System.out.println("Произошла ошибка при записи...");
+        }
+
+    }
+
     public static String Date_zapisatV_Fail (){
        System.out.println("Запись даты в файл");
 
