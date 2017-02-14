@@ -53,7 +53,7 @@ public class vsakoRaznoeMetodi {
 
         try {
 
-        if (dlinaMassiv > 0) {
+        if (dlinaMassiv >= 0) {
 
             int[] mass = new int[dlinaMassiv];
 
