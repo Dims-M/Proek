@@ -3,6 +3,8 @@ package com.ru.Random.Voda.com.com.ru.Zadachki;
 import java.util.Random;
 import java.util.Scanner;
 
+import static com.ru.Random.Voda.com.com.ru.Zadachki.ChenieIz_Faila2.zapicTextovogoFaila;
+
 
 public class vsakoRaznoeMetodi {
 
@@ -19,10 +21,11 @@ public class vsakoRaznoeMetodi {
         SlojeieMassivaS_ParametromPeremennoiDlini (temp);
         vivodMassivovInt(temp);
         //*****
-        System.out.println(vizovI_RaschetFactoriala ( temp.length));
-        System.out.println(vizovI_RaschetFactoriala ( 5));
-        rabotaSoStrokamiFormatirovanie();
-
+      //  System.out.println(vizovI_RaschetFactoriala ( temp.length));
+     //   System.out.println(vizovI_RaschetFactoriala ( 5));
+      //  rabotaSoStrokamiFormatirovanie();
+        /////************************
+        rabotaSoSkanerom ();
 
 
     }
@@ -35,6 +38,46 @@ public class vsakoRaznoeMetodi {
         System.out.println("Введите что хотите и нажмите Ентр");
 
         String muStroca = myscanner.nextLine();
+
+        System.out.println("Вы ввели "+muStroca);
+        //*******
+        System.out.println("Что вы хотите сделать с это строчкой?" +
+                "Введите:" +
+                "1 Для подсчета количества символа встроке" +
+                "2 Для сохранения введенной строки в файл" +
+                "3 Для Вывода на консоль" +
+                "4 Для выхода из программы");
+
+        Scanner intScaner = new Scanner(System.in);
+        int tempVibor = intScaner.nextInt();
+        String tempChislo = intScaner.nextLine();
+
+        switch (tempVibor){
+            case 1:{
+                System.out.println("Количество символов в строке " + muStroca +" Равно = "+muStroca.length());
+                break;
+            }
+
+            case 2: {
+                String mestoZapisi = "C:/zadachki/zapisScanera.txt";
+                System.out.println("Происходит запись введеного в файл");
+                zapicTextovogoFaila(muStroca,mestoZapisi);
+                break;
+            }
+
+            case 3: {
+                System.out.println("Вы написали "+ muStroca);
+                break;
+            }
+
+            case 4: {
+                System.out.println("Выход из программы...");
+                break;
+            }
+
+        }
+
+        System.out.println("Программа завершила свою работу...");
 
     }
 
