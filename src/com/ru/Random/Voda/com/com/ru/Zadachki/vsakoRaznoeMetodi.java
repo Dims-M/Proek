@@ -69,6 +69,7 @@ public class vsakoRaznoeMetodi {
                     tempInt = random.nextInt(10);
                     mass[i] = tempInt;
                     tempIntLog = Integer.toString(tempInt);
+                    // метод для записи массива в текс файл
                     zapicDannihIzMassiva(tempIntLog, mestoZapisi);
                     tempIntLog = "*";
                     //System.out.println(tempInt);
@@ -83,19 +84,16 @@ public class vsakoRaznoeMetodi {
             } // конец ифа
 
             else{
-                System.out.println("Некоректное заполнение длины(емкости) массива. Длина не может быть меньше или равна 0 ");
+                System.out.println("Некоректное заполнение длины(емкости) массива. Длина не может быть меньше или равна 0");
             }
 
-        }
-
-        catch (Exception ex) {
-
+        } catch (NumberFormatException ex) {
+            System.out.println("Ошибка преобразования из строки в число");
+        } catch (Exception ex) {
             ex.printStackTrace();
             System.out.println("Вынужденое завершение работы...");
 
-
-        }
-        finally {
+        } finally {
             System.out.println("Завершение работы...");
         }
 
