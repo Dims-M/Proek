@@ -32,7 +32,7 @@ public class vsakoRaznoeMetodi {
         /// создание и вывод в консоль обьекта
        // sozdanieObekta ("Руслан", "Большой", 27);
 
-        //
+        // запись данных массива в файл
         rabotaS_isqlicheniem (5);
 
 
@@ -44,6 +44,12 @@ public class vsakoRaznoeMetodi {
         Human human1 = new Human(name, opit,vozrast);
 
         System.out.println(human1.toString());
+
+    }
+
+    public static void chenie_Faila (){
+
+
 
     }
 
