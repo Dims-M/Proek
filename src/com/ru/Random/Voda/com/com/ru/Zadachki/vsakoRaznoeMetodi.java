@@ -1,7 +1,10 @@
 package com.ru.Random.Voda.com.com.ru.Zadachki;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.Random;
 import java.util.Scanner;
+import java.io.*;
 
 import static com.ru.Random.Voda.com.com.ru.Zadachki.ChenieIz_Faila2.Date_zapisatV_Fail;
 import static com.ru.Random.Voda.com.com.ru.Zadachki.ChenieIz_Faila2.zapicDannihIzMassiva;
@@ -33,7 +36,8 @@ public class vsakoRaznoeMetodi {
        // sozdanieObekta ("Руслан", "Большой", 27);
 
         // запись данных массива в файл
-        rabotaS_isqlicheniem (5);
+       // rabotaS_isqlicheniem (5);
+        chenie_Faila();
 
 
 
@@ -48,8 +52,35 @@ public class vsakoRaznoeMetodi {
     }
 
     public static void chenie_Faila (){
+        // Чтение из файлов
+        System.out.println("Вывод");
+
+       // String istochnik = "C:/zadachki/zapisVLog.txt";
+       // FileReader reader = new FileReader (istochnik);
+
+        try {
+            String istochnik = "C:/zadachki/testNaChenie.txt";
+
+            FileReader reader = new FileReader (istochnik);
+            // Создаем оьект для чтение файла. В качестве парамтера указываес в стринге откуда роизводить чтение
+
+            // читаем посимвольно
+            int c;
+            // В переменную с запысываем символьный тип данных.
+            while((c = reader.read())!=-1){
+            // перебераем в цикле построчно с помощью метода reader.read() все сттроки и символы в текстовом файле.
+                System.out.print((char)c);
+                // выводим  и приводим интовые значения к симловам
+            }
 
 
+        } catch (FileNotFoundException e) {
+            System.out.println("Ошибка");
+            e.printStackTrace();
+        } catch (IOException e) {
+            System.out.println("Ошибка");
+            e.printStackTrace();
+        }
 
     }
 
