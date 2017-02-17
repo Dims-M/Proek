@@ -37,8 +37,14 @@ public class vsakoRaznoeMetodi {
 
         // запись данных массива в файл
        // rabotaS_isqlicheniem (5);
-        chenie_Faila();
+       // chenie_Faila();
 
+        // Работаем с обьектами
+        Book myBook = new Book();
+        // Запись объекта в файл
+        zapisObekta(myBook);
+
+        chenie_Faila();
 
 
     }
@@ -59,7 +65,7 @@ public class vsakoRaznoeMetodi {
        // FileReader reader = new FileReader (istochnik);
 
         try {
-            String istochnik = "C:/zadachki/testNaChenie.txt";
+            String istochnik = "C:/zadachki/zapisSoderjimogoObekta.txt";
 
             FileReader reader = new FileReader (istochnik);
             // Создаем оьект для чтение файла. В качестве парамтера указываес в стринге откуда роизводить чтение
@@ -75,17 +81,43 @@ public class vsakoRaznoeMetodi {
 
 
         } catch (FileNotFoundException e) {
-            System.out.println("Ошибка");
+            System.out.println("Ошибка Файл не найден");
             e.printStackTrace();
         } catch (IOException e) {
             System.out.println("Ошибка");
             e.printStackTrace();
         }
-
     }
 
 
 
+    public static void zapisObekta (Object object) {
+        String infoSoobjenie = "Запись данных в файл";
+        System.out.println(infoSoobjenie);
+
+        try {
+            // Обьект для открытия или создания файлов.
+            FileWriter writer = new FileWriter("C:/zadachki/zapisSoderjimogoObekta.txt", false);
+
+            // запись всей строки
+            String text = object.toString();
+            // метод writer.write(text) Записывает целую строку!!!
+            writer.write(text);
+            writer.write(infoSoobjenie);
+
+            writer.append('\n');
+           // writer.append('E');
+
+            writer.flush();
+
+        }
+
+        catch (IOException e) {
+            System.out.println("Ошибка при открытии файла");
+            e.printStackTrace();
+        }
+
+    }
     public static void  rabotaS_isqlicheniem (int dlinaMassiv) {
 
         try {
