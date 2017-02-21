@@ -133,14 +133,20 @@ public class MyCollection {
             SimpleDateFormat simpleFormatData = new SimpleDateFormat("'ДАТА Cоздания: 'E dd.MM.yyyy' Time: ' hh:mm:ss \n");
             String vivodDate = simpleFormatData.format(myData);
 
+            //String failIstochnik1 = "C:\\zadachki\\111.txt";
             // Создаем обьект для записи файла в текс. Указываем путь записи
-            FileWriter myWriter = new FileWriter(failIstochnik,false);
+            FileWriter myWriter = new  FileWriter(failIstochnik, true);
+
+
+            System.out.println(vivodDate);
+            System.out.println(failIstochnik);
 
             // Запись текста в файл
             myWriter.write(tekst);
+            myWriter.append('\n');
             myWriter.write(vivodDate);
-
-
+            myWriter.append('\n');
+            myWriter.flush();
         } // конец экшепшена
 
     catch (FileNotFoundException e) {
@@ -152,7 +158,8 @@ public class MyCollection {
     }
 
         finally {
-           System.out.println("Закрытия программы....");
+           System.out.println("Данные Сохранены...\n" +
+                   "Закрытия программы....");
         }
 
     } // конец метода
