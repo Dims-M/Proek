@@ -41,12 +41,23 @@ public class vsakoRaznoeMetodi {
 
         // Работаем с обьектами
         Book myBook = new Book();
+        Book myBook1 = new Book();
         // Запись объекта в файл
         zapisObekta(myBook);
 
         chenie_Faila();
 
+        myBook.setName("Дастин Фантастишь");
+        myBook.setAvtor("Не известен");
+        zapisObekta(myBook);
+        chenie_Faila();
 
+        myBook1.setName("Для чайноков");
+        myBook1.setAvtor("Народ");
+        myBook1.setGodVipuska(2015);
+        myBook1.setStoinost(500);
+        zapisObekta(myBook1);
+        chenie_Faila();
     }
 
     public static void sozdanieObekta (String name, String opit, int vozrast){
@@ -97,7 +108,7 @@ public class vsakoRaznoeMetodi {
 
         try {
             // Обьект для открытия или создания файлов.
-            FileWriter writer = new FileWriter("C:/zadachki/zapisSoderjimogoObekta.txt", false);
+            FileWriter writer = new FileWriter("C:/zadachki/zapisSoderjimogoObekta.txt", true);
 
             // запись всей строки
             String text = object.toString();

@@ -9,14 +9,14 @@ public class Book {
    private String avtor = "Не задано";
    private int colichestvoStranic;
    private int stoinost;
-   private  byte kolichestvProdaj;
-   private byte godVipuska;
+   private  int kolichestvProdaj;
+   private int godVipuska;
 
-    public byte getGodVipuska() {
+    public int getGodVipuska() {
         return godVipuska;
     }
 
-    public void setGodVipuska(byte godVipuska) {
+    public void setGodVipuska(int godVipuska) {
         this.godVipuska = godVipuska;
     }
 
@@ -57,7 +57,7 @@ public class Book {
         this.stoinost = stoinost;
     }
 
-    public byte getKolichestvProdaj() {
+    public int getKolichestvProdaj() {
         return kolichestvProdaj;
     }
 
