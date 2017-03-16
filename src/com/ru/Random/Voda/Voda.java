@@ -15,11 +15,12 @@ public class Voda {
     public static void raschetRandoma (){
 
         Scanner scanner = new Scanner(System.in);
-        byte[] random = new byte[6];
+        int[] random = new int[5];
 
         String[] randomIgr = new String[5];
 
-        int dlina = 0;
+        int dlina = 1;
+        String itog = " ";
         boolean proverka = true;
         Random myRandom = new Random();
 
@@ -44,9 +45,8 @@ public class Voda {
                         System.out.println("В игре участвует Булат");
 
                         byte idBulat = 1;
-                        random[0]=1;
+                        random[1]=1;
                         dlina++;
-                        // id пользователей
 
                         System.out.println("Еще?");
                         randomIgr [0] = "Булат";
@@ -56,7 +56,7 @@ public class Voda {
                     case 2:{
                         System.out.println("В игре участвует Ринат");
                         dlina++;
-                        random[1]=2;
+                        random[2]=2;
                         System.out.println("Еще?");
                         randomIgr [1] =  "Ринат";
                         continue;
@@ -65,7 +65,7 @@ public class Voda {
                     case 3:{
                         System.out.println("В игре участвует Руслан");
                         dlina++;
-                        random[2]=3;
+                        random[3]=3;
                         randomIgr [2] = "Руслан";
                         System.out.println("Еще?");
                         continue;
@@ -74,7 +74,7 @@ public class Voda {
                     case 4:{
                         System.out.println("В игре участвует Дима");
                         dlina++;
-                        random[3]=4;
+                        random[4]=4;
                         randomIgr [3] = "Дима";
                         System.out.println("Еще?");
                         continue;
@@ -86,39 +86,32 @@ public class Voda {
                             if (randomIgr[i] == null) {
                                // System.out.println("Никто не участвует");
                                 break;
-
                             }
+
                             System.out.println("В игре участвуют  " + randomIgr[i]);
                             // System.out.println("Выясняем, кто идет за водkой.... ");
                           //  proverka = false;
                           //  break;
                         }
-
+                        proverka = false;
+                        break;
                     }
                     // System.out.println("Выясняем, кто идет за водkой.... ");
-                    proverka = false;
-                    break;
+                   // proverka = false;
+                   // break;
                 }
 
             } // конец вайла
 
         System.out.println();
-       // System.out.println("Выясняем, кто идет за водkой.... ");
+        System.out.println("Выясняем, кто идет за водkой.... ");
 
-        byte rezultat = (byte) myRandom.nextInt(randomIgr.length);
-        String itog = " ";
-        int[] random2 = new int[dlina];
-        boolean prov = true;
-
-
-
-      //  System.out.println(itog);
+       int rezultat = myRandom.nextInt( random.length);
 
         for (int i = 0; i < random.length;i++ ){
+            //  for (int i = 0; i < random.length;i++ ){
 
           if ( random[i] == rezultat) {
-
-              // System.out.println("аааааааааааа");
 
               switch (rezultat) {
 
@@ -146,15 +139,17 @@ public class Voda {
                       itog = "Никто";
                       break;
                   }
-                  default:{
-                      itog = "Никто не идет";
-                      break;
-                  }
+                 // default:{
+                     // itog = "Никто не идет";
+                    //  break;
+                //  }
               }
-
+              break;
           }
-
+           // System.out.println("Никто не идет");
+           // break;
             }
+
 
         System.out.println(itog);
 

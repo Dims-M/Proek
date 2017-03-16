@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
-  <artifact type="jar" build-on-make="true" name="Test1:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/Test1_jar</output-path>
+  <artifact type="jar" build-on-make="true" name="Voda2">
+    <output-path>$PROJECT_DIR$/out/artifacts/Voda2</output-path>
     <root id="archive" name="Test.jar">
       <element id="module-output" name="Test" />
     </root>
