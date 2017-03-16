@@ -49,7 +49,7 @@ public class MyCollection {
             int length = stream.available();
 
             // для считывания байтов из обьекта stream
-            // Создавем масив для записи покока байтов
+            // Создавем масив для записи поtока байтов
             byte[] data = new byte[length];
 
             // Чтение из массива
