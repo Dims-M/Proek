@@ -13,6 +13,8 @@ public class MainBooks {
 
         myBook.infaOKnige();
 
+        myBook.glavnoeMenu();
+
 
     }
 

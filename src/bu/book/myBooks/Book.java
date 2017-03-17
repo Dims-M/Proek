@@ -22,7 +22,7 @@ public class Book {
 
     }
 
-    protected void infaOKnige() {
+    public void infaOKnige() {
         System.out.println("Автор книги " + avtor + "\n" +
                 "Жанр книги " + janr + "\n" +
                 "Издатель книги " + izdatel + "\n" +
@@ -33,61 +33,45 @@ public class Book {
 
     }
 
-    protected void sozdanieKnigi() {
+    protected void glavnoeMenu() {
 
         boolean meny = true;
         boolean glavnoeMeny = true;
-        int a = 0;
-        while (glavnoeMeny) {
 
-            while (meny)
+        String str =" " ;
+        int a = 5;
+        while (glavnoeMeny) {
+            System.out.println("Добавления Книги");
+
+            while (meny) {
                 System.out.println("Вы хотите зарегистрировать новую книгу?" + "\n" +
                         "Если ДА нажмите(введите) 1(Да) и ENTR, \n" + "Если отменить то нажмите(введите) 0(Нет) ");
 
-            Scanner vvod = new Scanner(System.in);
+               Scanner vvod = new Scanner(System.in);
+                int asd = vvod.nextInt();
+                if (asd > 0 ) {
+                    int viborRegistracii = vvod.nextInt();
 
-            if (vvod.equals(a)) {
-                int viborRegistracii = vvod.nextInt();
+                    switch (viborRegistracii) {
 
-                switch (viborRegistracii) {
+                        case 1: {
+                            System.out.println("Создание новой книги");
 
-                    case 1: {
-                        System.out.println("Создание новой книги");
+                            break;
+                        }
 
-                        break;
+                        case 0: {
+                            System.out.println("Отмена...выход..из меню...");
+
+                            break;
+
+                        }
                     }
 
-                    case 0: {
-                        System.out.println("Отмена...выход..из меню...");
-                        meny = false;
-                        break;
-                    }
                 }
-            } else {
-                String viborRegistracii = vvod.nextLine();
-
-                switch (viborRegistracii) {
-
-                    case "Да":
-                    case "да": {
-                        System.out.println("Создание новой книги");
-
-                        break;
-                    }
-
-                    case "Нет":
-                    case "нет": {
-                        System.out.println("Отмена...выход..из меню...");
-                        meny = false;
-                        break;
-                    }
                 }
-            }
 
 
-            System.out.println("Выход из программы...");
-            glavnoeMeny = false;
-
-        } // кокею.нец вайла главного м
+        }
     }
 } // коней класса Book
