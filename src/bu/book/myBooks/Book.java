@@ -1,6 +1,6 @@
 package bu.book.myBooks;
 
-import java.io.File;
+import java.io.*;
 import java.util.Date;
 import java.util.Scanner;
 import java.text.SimpleDateFormat;
@@ -26,20 +26,24 @@ public class Book {
 
     }
 
-    public void infaOKnige() {
-        System.out.println("Название книги" +nameKniga+
+    public String infaOKnige() {
+        String infaOknige =
+        "Название книги" +nameKniga+
                 "Автор книги " + avtor + "\n" +
                 "Жанр книги " + janr + "\n" +
                 "Издатель книги " + izdatel + "\n" +
                 "Качество книги " + kachestvo + "\n" +
                 "Количество страниц в книге " + kolichestvoStranich + "\n" +
                 "Цена книги " + prais + "\n" +
-                "Год выпуска книги " + godVipuska + "\n");
+                "Год выпуска книги " + godVipuska + "\n" ;
 
+        //System.out.println(infaOknige);
+        return infaOknige;
     }
 
 
     protected void sozdanieBooks(){
+
         Scanner scannerVoda = new Scanner(System.in);
         System.out.println("Происходит создание книги... \n");
 
@@ -66,14 +70,16 @@ public class Book {
 
         System.out.println("Введите год выпуска книги и нажмите ENTER \n");
         godVipuska = scannerVoda.nextInt();
-        zapisDannihKnigiVfail();
+
+        zapisDannihKnigiVfail(infaOKnige());
 
     }
 
-    protected void zapisDannihKnigiVfail(){
+    protected void zapisDannihKnigiVfail(String kniga){
 
              // место сохоанения лога
-            String mestoHranenieFails = "C:\\zadachki\\Myknigi"+ nameKniga+"txt";
+            String mestoHranenieFails = "C:\\zadachki\\Myknigi_"+ nameKniga+".txt";
+            String myObject = kniga;
 
         // работаем с Датой
         Date myDate = new Date();
@@ -82,12 +88,55 @@ public class Book {
         // В строке записываем настройки форматирования
         String myDateFormat =  mysimpleDateFormat.format(myDate);
 
-        File moiFail = new File(nameKniga);
+        try {
+
+            // обьект для создания
+            File moiFail = new File(nameKniga);
+
+            // проверяем. Если файл с таким именем не существует то создаем новый файл
+            if (!moiFail.exists()) {
+                // если файл не существует то созадем его
+                moiFail.createNewFile();
+            }
+            // обьект для фактичекой записи текста в файд. 2й параметр указывает на дозапись данных в конец строки
+            FileWriter myZapisFaila = new FileWriter(mestoHranenieFails, true);
+
+            myZapisFaila.append(myDateFormat);
+            myZapisFaila.append(" \n");
+            myZapisFaila.append(myObject);
+            myZapisFaila.append(" \n");
+            myZapisFaila.flush();
 
 
-
+        } // конец трая
+        catch (IOException e) {
+            System.out.println("Ошибка при создании файла файла");
+            e.printStackTrace();
+        }
     }
 
+    protected void cheniefaila (String str){
+
+        String obektChenia =  str;
+
+       try {
+          FileReader fileWriter = new FileReader(obektChenia);
+           // Создаем оьект для чтение файла. В качестве парамтера указываес в стринге откуда роизводить чтение
+
+           // читаем посимвольно
+           int c;
+           // В переменную с запысываем символьный тип данных.
+           while((c = fileWriter.read())!=-1){
+               // перебераем в цикле построчно с помощью метода reader.read() все сттроки и символы в текстовом файле.
+               System.out.print((char)c);
+               // выводим  и приводим интовые значения к симловам
+           }
+       }
+        catch (Exception E){
+            System.out.println("Ошибка чтения");
+        }
+
+    }
 
     protected void glavnoeMenu() {
 
