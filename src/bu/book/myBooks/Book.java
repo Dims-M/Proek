@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class Book {
 
     String avtor;
+    String nameKniga;
     String janr;
     String izdatel;
     String kachestvo;
@@ -23,7 +24,8 @@ public class Book {
     }
 
     public void infaOKnige() {
-        System.out.println("Автор книги " + avtor + "\n" +
+        System.out.println("Название книги" +nameKniga+
+                "Автор книги " + avtor + "\n" +
                 "Жанр книги " + janr + "\n" +
                 "Издатель книги " + izdatel + "\n" +
                 "Качество книги " + kachestvo + "\n" +
@@ -32,6 +34,46 @@ public class Book {
                 "Год выпуска книги " + godVipuska + "\n");
 
     }
+
+
+    protected void sozdanieBooks(){
+        Scanner scannerVoda = new Scanner(System.in);
+        System.out.println("Происходит создание книги... \n");
+
+        System.out.println("Введите Название книги и нажмите ENTER \n");
+        nameKniga = scannerVoda.nextLine();
+
+        System.out.println("Введите Автора книги и нажмите ENTER \n");
+        avtor = scannerVoda.nextLine();
+
+        System.out.println("Введите Жанр книги и нажмите ENTER \n");
+        janr = scannerVoda.nextLine();
+
+        System.out.println("Введите Издателя книги и нажмите ENTER \n");
+        izdatel = scannerVoda.nextLine();
+
+        System.out.println("Определите Качество книги и нажмите ENTER \n");
+        kachestvo = scannerVoda.nextLine();
+
+        System.out.println("Введите количество страниц в этой книги и нажмите ENTER \n");
+        kolichestvoStranich = scannerVoda.nextInt();
+
+        System.out.println("Введите стоимость книги и нажмите ENTER \n");
+        prais = scannerVoda.nextInt();
+
+        System.out.println("Введите год выпуска книги и нажмите ENTER \n");
+        godVipuska = scannerVoda.nextInt();
+
+    }
+
+    protected void zapisDannihKnigiVfail(){
+
+        // место сохоанения лога
+            String mestoHranenieFails = "C:\\zadachki"+ nameKniga+"txt";
+
+
+    }
+
 
     protected void glavnoeMenu() {
 
@@ -44,34 +86,63 @@ public class Book {
             System.out.println("Добавления Книги");
 
             while (meny) {
-                System.out.println("Вы хотите зарегистрировать новую книгу?" + "\n" +
+                System.out.println("Вы хотите зарегистрировать новую книгу?" + "\n" + "\n" +
                         "Если ДА нажмите(введите) 1(Да) и ENTR, \n" + "Если отменить то нажмите(введите) 0(Нет) ");
 
-               Scanner vvod = new Scanner(System.in);
-                int asd = vvod.nextInt();
-                if (asd > 0 ) {
-                    int viborRegistracii = vvod.nextInt();
+                Scanner vvod = new Scanner(System.in);
+                int viborRegistracii = vvod.nextInt();
+
+                if (viborRegistracii > 0) {
 
                     switch (viborRegistracii) {
 
                         case 1: {
                             System.out.println("Создание новой книги");
-
+                            // Создаем книгу с заполнением параметров
+                            sozdanieBooks();
+                            meny = false;
                             break;
                         }
 
                         case 0: {
                             System.out.println("Отмена...выход..из меню...");
 
+                            meny = false;
                             break;
-
                         }
                     }
-
-                }
                 }
 
 
-        }
+            } // конец вайла
+
+
+            { // Тестовой блок
+
+                System.out.println("Просмотреть созданную книгу? ");
+                System.out.println("Да (1)");
+                System.out.println("Нет, выход из программы (0)");
+                Scanner scannerPeredVihodjv = new Scanner(System.in);
+
+                int proverkaPeredVihodom = scannerPeredVihodjv.nextInt();
+
+                switch (proverkaPeredVihodom){
+
+                    case 1 : {
+                        infaOKnige();
+                    }
+
+                    case 0: {
+                        System.out.println("Выход из программы");
+                        glavnoeMeny = false;
+                    }
+
+                } // конец свича
+
+
+            }
+
+
+        } // конец главного вайпа
     }
 } // коней класса Book
