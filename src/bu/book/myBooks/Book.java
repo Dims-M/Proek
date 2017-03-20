@@ -28,7 +28,7 @@ public class Book {
 
     public String infaOKnige() {
         String infaOknige =
-        "Название книги" +nameKniga+
+               "Название книги " +nameKniga+
                 "Автор книги " + avtor + "\n" +
                 "Жанр книги " + janr + "\n" +
                 "Издатель книги " + izdatel + "\n" +
@@ -47,7 +47,7 @@ public class Book {
         Scanner scannerVoda = new Scanner(System.in);
         System.out.println("Происходит создание книги... \n");
 
-        System.out.println("Введите Название книги и нажмите ENTER \n");
+        System.out.println("Введите Название книги и нажмите ENTER \n ");
         nameKniga = scannerVoda.nextLine();
 
         System.out.println("Введите Автора книги и нажмите ENTER \n");
@@ -117,7 +117,8 @@ public class Book {
 
     protected void cheniefaila (String str){
 
-        String obektChenia =  str;
+        String obektChenia;
+        obektChenia = "C:\\zadachki\\"+str+".txt";
 
        try {
           FileReader fileWriter = new FileReader(obektChenia);
@@ -150,7 +151,7 @@ public class Book {
 
             while (meny) {
                 System.out.println("Вы хотите зарегистрировать новую книгу?" + "\n" + "\n" +
-                        "Если ДА нажмите(введите) 1(Да) и ENTR, \n" + "Если отменить то нажмите(введите) 0(Нет) ");
+                        "Если ДА нажмите(введите) 1(Да) и ENTR, \n" + "Если отменить то нажмите(введите) 0(Нет)\nПрочитать ранее созданные книги 2(0)");
 
                 Scanner vvod = new Scanner(System.in);
                 int viborRegistracii = vvod.nextInt();
@@ -164,6 +165,27 @@ public class Book {
                             // Создаем книгу с заполнением параметров
                             sozdanieBooks();
                             meny = false;
+                            break;
+                        }
+
+                        case 2: {
+                            System.out.println("Прочитать ранее созданные книги");
+                            File file = new File("C:\\zadachki");
+                            System.out.println("****************************");
+                            String [] listi = file.list();
+
+                            for (String temp: listi){
+                                System.out.println(temp);
+                            }
+
+                            System.out.println("Введите нужную вам книгу и нажмите ЕNTER");
+                            System.out.println("********* ");
+                            Scanner scanner = new Scanner(System.in);
+                            String knigiList = scanner.nextLine();
+
+                            cheniefaila(knigiList);
+                            System.out.println("********* ");
+
                             break;
                         }
 
@@ -192,7 +214,7 @@ public class Book {
                 switch (proverkaPeredVihodom){
 
                     case 1 : {
-                        infaOKnige();
+                        System.out.println(infaOKnige());
                     }
 
                     case 0: {
