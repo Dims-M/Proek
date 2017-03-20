@@ -1,6 +1,9 @@
 package bu.book.myBooks;
 
+import java.io.File;
+import java.util.Date;
 import java.util.Scanner;
+import java.text.SimpleDateFormat;
 
 /**
  * Created by Администратор on 17.03.2017.
@@ -63,13 +66,24 @@ public class Book {
 
         System.out.println("Введите год выпуска книги и нажмите ENTER \n");
         godVipuska = scannerVoda.nextInt();
+        zapisDannihKnigiVfail();
 
     }
 
     protected void zapisDannihKnigiVfail(){
 
-        // место сохоанения лога
-            String mestoHranenieFails = "C:\\zadachki"+ nameKniga+"txt";
+             // место сохоанения лога
+            String mestoHranenieFails = "C:\\zadachki\\Myknigi"+ nameKniga+"txt";
+
+        // работаем с Датой
+        Date myDate = new Date();
+        // Создали обьект для вывода форматирования датой
+        SimpleDateFormat mysimpleDateFormat = new SimpleDateFormat("'ДАТА Cоздания: 'E dd.MM.yyyy' Time: ' hh:mm:ss \n");
+        // В строке записываем настройки форматирования
+        String myDateFormat =  mysimpleDateFormat.format(myDate);
+
+        File moiFail = new File(nameKniga);
+
 
 
     }
