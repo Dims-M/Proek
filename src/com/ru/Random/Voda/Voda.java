@@ -170,7 +170,13 @@ public class Voda {
                     }
 
                     case 15: {
-                        udalenieLoga ();
+                      //  udalenieLoga ();
+                        File file = new File("Log.txt");
+                        File  newFile = new File("LogHistoriOld.txt");
+                        //***************
+                        copy(file,newFile );
+                        ///////////////////
+
                         System.out.println("Удаление файлов истории");
                         proverka = false;
                         Proveka2 = false;
@@ -284,6 +290,9 @@ public class Voda {
             }
         } catch (InputMismatchException inputMismatchException) {
             System.out.println("Ошибка епте");
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Ошибка при копировании файла");
         } finally {
             System.out.println("Началось форматирование диска С:");
         }
@@ -354,42 +363,67 @@ public class Voda {
         }
     }
 
-    public static void udalenieLoga (){
+    public static void udalenieLoga () {
+        boolean her = true;
+        while (her) {
+            Scanner scanner = new Scanner(System.in);
 
-        Scanner scanner = new Scanner(System.in);
+            String pass = scanner.nextLine();
+            String parol = "123";
 
-        String pass = scanner.nextLine();
-        String parol = "123";
 
-        File source = new File(mestoHraneniaLoga);
-        File dest = new File(mestoHraneniaLoga + "Histori.txt");
+            if (pass.equals(parol)) {
+                System.out.println("Удаление истории Позора");
 
-        if (pass.equals(parol) ) {
-            System.out.println("Удаление истории Позора");
+                try {
 
-            try {
+                    copyFileUsingJava7Files();
 
-                copyFileUsingJava7Files(source, dest);
 
+                } catch (Exception e) {
+                    System.out.println("Ошибка при копировании файла");
+                }
 
             }
-        catch (Exception e){
-              System.out.println("Ошибка при создании файла");
-}
-
+            Scanner scanner1 = new Scanner(System.in);
+            int temp123 = scanner1.nextInt();
+            if (temp123 == 12345){
+                her = false;
+            }
         }
 
     }
 
-    private static void copyFileUsingJava7Files(File source, File dest) {
 
-        source = new File(mestoHraneniaLoga);
-        dest = new File(mestoHraneniaLoga + "Histori.txt");
-
-
-
-
+    public static void copy(File source, File dest) throws IOException {
+        Files.copy(source.toPath(), dest.toPath());
     }
+
+    private static void copyFileUsingJava7Files() {
+
+        //переуменование файла
+        File file = new File("Log.txt");
+        File  newFile = new File("LogHistoriOld.txt");
+
+       try {
+       if (!newFile.exists()) {
+            // если файл не существует то созадем его
+            newFile.createNewFile();
+         //  file.renameTo(new java.io.File("LogHistoriOld.txt"));
+       }
+        }
+        catch (Exception ex){
+            System.out.println("Ошибка создания файла при переименования лога");
+        }
+
+
+        if(file.renameTo(newFile)){
+            System.out.println("Файл перемещен успешно");;
+        }else{
+            System.out.println("Файл не был перемещен");
+        }
+    }
+
 
 } // конец класса
 
