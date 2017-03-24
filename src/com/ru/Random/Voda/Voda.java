@@ -32,7 +32,7 @@ public class Voda {
         String[] randomIgr = new String[9];
 
 
-        int dlina = 1;
+        int dlina = 0;
         String itog = "лгннг";
         String vihodIzProgrammi = " ";
 
