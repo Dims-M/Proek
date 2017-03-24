@@ -41,11 +41,6 @@ public class temp {
         Random randomInt = new Random();
         massivTemp[i] = randomInt.nextInt(10);
     }
-
-        // Вывод проверочного заполнения массива
-//        for (int vivodTemp:massivTemp){
-//            System.out.print(vivodTemp);
-//        }
         return massivTemp;
     }
 
@@ -61,10 +56,14 @@ public class temp {
     public static  int[] sortirovkaMassiva (int corseMassiv []){
         // сортировка массива
         vivodIntMassiva(corseMassiv);
+        zapisV_Log ();
+
         System.out.println("\n");
         Arrays.sort(corseMassiv);
 
+        zapisV_Log ();
         vivodIntMassiva((corseMassiv));
+
         return corseMassiv;
     }
 
@@ -80,30 +79,34 @@ public class temp {
     }
 
     public static void zapisV_Log () {
-        // запись файла
-        String mestoHranenie = "C:\\zadachki";
 
-        try {
+            // запись файла
+            String mestoHranenie = "C:\\zadachki\\LogMassiva.txt";
+            String slovo = "Запись в Лог";
 
-            File myFile = new File(mestoHranenie);
-            FileWriter writerZapis = new FileWriter(myFile, true);
+            try {
+                File myFile = new File(mestoHranenie);
+                FileWriter writerZapis = new FileWriter(myFile, true);
 
-            //// если файл не существует то созадем его
-            if (!myFile.exists()) {
-                myFile.createNewFile();
+                //// если файл не существует то созадем его
+                if (!myFile.exists()) {
+                    myFile.createNewFile();
+                }
+
+                writerZapis.append(slovo+"........\n");
+                writerZapis.append(myDate());
+                writerZapis.append("\n");
+                writerZapis.append("\n");
+
+                writerZapis.flush();
+
+
+            } catch (Exception ex) {
+                System.out.println("Ошибка при создании(или записи) файла");
             }
-
-            writerZapis.append("Запись в Лог........\n");
-            writerZapis.append(myDate ());
-
-            writerZapis.flush();
-            writerZapis.close();
-
-
-        } catch (Exception ex){
-            System.out.println("Ошибка при создании(или записи) файла");
         }
 
-    }
+
+
 
 } // конец метода темп
