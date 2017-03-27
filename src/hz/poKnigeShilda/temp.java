@@ -27,9 +27,10 @@ public class temp {
 
     }
 
-    public static void infaOClasse (){
+    public static String infaOClasse (){
         String infaOclasee = "Класс для отработки всякого разного....\n";
         System.out.println(infaOclasee);
+        return infaOclasee;
     }
 
 
@@ -46,22 +47,26 @@ public class temp {
 
 
     public static void vivodIntMassiva (int corseMassiv []) {
+        String tempStr = "";
         //Вывод интового массива
         // интовый массив
         for (int vivodTemp : corseMassiv) {
             System.out.print(vivodTemp);
+            tempStr += String.valueOf(vivodTemp);
         }
+         zapisV_Log (tempStr);
     }
+
 
     public static  int[] sortirovkaMassiva (int corseMassiv []){
         // сортировка массива
         vivodIntMassiva(corseMassiv);
-        zapisV_Log ();
+       // zapisV_Log (infaOClasse());
 
         System.out.println("\n");
         Arrays.sort(corseMassiv);
 
-        zapisV_Log ();
+       // zapisV_Log ("Тестовая запись");
         vivodIntMassiva((corseMassiv));
 
         return corseMassiv;
@@ -72,13 +77,13 @@ public class temp {
         // Работа с датой
         Date myData = new Date();
         // создаем обьект для форматирования даны(с помощью патерна(шаблона))
-        SimpleDateFormat simpleFormatData = new SimpleDateFormat("'ДАТА Игры: 'E dd.MM.yyyy' Time: ' hh:mm:ss \n");
+        SimpleDateFormat simpleFormatData = new SimpleDateFormat("'ДАТА записи: 'E dd.MM.yyyy' Time: ' hh:mm:ss \n");
         String vivodDate = simpleFormatData.format(myData);
 
         return vivodDate;
     }
 
-    public static void zapisV_Log () {
+    public static void zapisV_Log (String strig) {
 
             // запись файла
             String mestoHranenie = "C:\\zadachki\\LogMassiva.txt";
@@ -96,6 +101,7 @@ public class temp {
                 writerZapis.append(slovo+"........\n");
                 writerZapis.append(myDate());
                 writerZapis.append("\n");
+                writerZapis.append(strig);
                 writerZapis.append("\n");
 
                 writerZapis.flush();
